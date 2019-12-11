@@ -1,0 +1,53 @@
+@startuml
+skinparam class {
+	BackgroundColor White
+	ArrowColor Black
+	BorderColor Black
+}
+class Entity as "Потоки"
+
+class Input as "Входной\nпоток"
+class Output as "Выходной\nпоток"
+class Control as "Поток\nуправления"
+
+class INInformation as "Информационный"
+class INMaterialistic as "Материальный"
+
+class OUTMaterialistic as "Информационный"
+
+class CTRLInformation as "Информационный"
+
+class Product as "Спрос на\n продукцию"
+class Document as "Приходно-расходная\n документация"
+class Client as "Заявка\n клиента"
+class Materials as "Товары"
+class InformationIn as "Сведения о наличии\n товара (остатки)"
+class Information as "Отчет об\n анализе продаж"
+class JobDescriptions as "Должностные\nинструкции"
+class AccountingRules as "Политика\n компании" 
+
+
+Entity <|-- Input 
+Entity <|-- Output 
+Entity <|-- Control 
+
+Input <|-- INInformation 
+Input <|-- INMaterialistic 
+Output <|-- OUTMaterialistic 
+Control <|-- CTRLInformation 
+
+INInformation <|-- Product
+INInformation <|-- Document
+INInformation <|-- Client
+ 
+INMaterialistic <|-- Materials 
+OUTMaterialistic <|-- Information
+OUTMaterialistic <|-- InformationIn
+
+CTRLInformation <|-- JobDescriptions 
+CTRLInformation <|-- AccountingRules 
+
+hide members
+hide circle
+hide methods
+@enduml
