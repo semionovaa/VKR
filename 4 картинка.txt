@@ -1,0 +1,28 @@
+@startuml
+skinparam class {
+	BackgroundColor White
+	ArrowColor Black
+	BorderColor Black
+}
+
+class BD as "Бaза данных"
+
+class Client as "Клиент"
+class Sklad as "Склад"
+class Sotr as "Сотрудник"
+class Chekc as "Счет"
+class Zakaz as "Заказ"
+class Check as "Счёт фирмы"
+
+
+BD <|-- Client
+BD  <|-- Sklad 
+BD  <|-- Sotr
+BD  <|-- Chekc
+BD  <|-- Zakaz
+BD  <|-- Check
+ 
+hide members
+hide circle
+hide methods
+@enduml
